@@ -33,6 +33,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="y07-MD-Dqj">
                                         <rect key="frame" x="-2" y="210.33333333333331" width="154" height="31"/>
+                                        <connections>
+                                            <action selector="durationSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UPg-ki-Cw8"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-pR-Jzh">
                                         <rect key="frame" x="0.0" y="260.33333333333331" width="150" height="20.333333333333314"/>
@@ -42,6 +45,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mz6-kL-ZzN">
                                         <rect key="frame" x="-2" y="300.66666666666669" width="154" height="31"/>
+                                        <connections>
+                                            <action selector="angleSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SPk-Va-6UQ"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg9-Sc-PkT">
                                         <rect key="frame" x="0.0" y="350.66666666666669" width="150" height="20.333333333333314"/>
@@ -51,6 +57,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uup-pm-HyV">
                                         <rect key="frame" x="-2" y="390.99999999999994" width="154" height="31"/>
+                                        <connections>
+                                            <action selector="offsetSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SUU-UH-nJS"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                             </stackView>
@@ -63,7 +72,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="angleSlider" destination="mz6-kL-ZzN" id="Cow-r6-nOf"/>
                         <outlet property="bellView" destination="DQI-e0-SL5" id="Q1I-qo-COT"/>
+                        <outlet property="durationSlider" destination="y07-MD-Dqj" id="U4w-OV-zUt"/>
+                        <outlet property="offsetSlider" destination="Uup-pm-HyV" id="Oze-4I-5aa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
