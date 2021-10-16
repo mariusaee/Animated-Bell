@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var offsetSlider: UISlider!
     @IBOutlet weak var rotationSlider: UISlider!
     
-    
     private var duration: Double = 1 {
         didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
     }
@@ -50,7 +49,6 @@ class ViewController: UIViewController {
     @IBAction func rotationSliderChanged(_ sender: UISlider) {
         rotation = CGFloat(sender.value)
     }
-    
 }
 
 // MARK: - Setup
@@ -62,7 +60,6 @@ extension ViewController {
     }
 }
 
-
 // MARK: - Animation
 extension ViewController {
     @objc private func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
@@ -70,7 +67,6 @@ extension ViewController {
     }
     
     private func shakeWith(duration: Double, angle: CGFloat, yOffset: CGFloat) {
-        print("duration: \(duration) angle: \(angle) offset: \(yOffset)")
         
         let numberOfFrames: Double = 6
         let frameDuration = Double(1/numberOfFrames)

@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-XV-TOZ">
-                                <rect key="frame" x="85" y="46" width="150" height="476"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-XV-TOZ">
+                                <rect key="frame" x="85" y="36" width="150" height="496"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-KD-4sg">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -38,7 +38,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zk7-Gh-JLw">
-                                        <rect key="frame" x="0.0" y="190" width="150" height="286"/>
+                                        <rect key="frame" x="0.0" y="210" width="150" height="286"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN2-pH-EG7">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
