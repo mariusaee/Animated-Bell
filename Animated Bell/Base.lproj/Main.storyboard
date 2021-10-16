@@ -18,7 +18,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-XV-TOZ">
                                 <rect key="frame" x="85" y="36" width="150" height="496"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-KD-4sg">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-KD-4sg" userLabel="Bell Background View">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DQI-e0-SL5">
@@ -102,8 +102,8 @@
                     </view>
                     <connections>
                         <outlet property="angleSlider" destination="mz6-kL-ZzN" id="Cow-r6-nOf"/>
+                        <outlet property="bellBackgroundView" destination="mqn-KD-4sg" id="63B-lS-86w"/>
                         <outlet property="bellView" destination="DQI-e0-SL5" id="Q1I-qo-COT"/>
-                        <outlet property="bellsAssView" destination="mqn-KD-4sg" id="ypl-b8-xAf"/>
                         <outlet property="durationSlider" destination="y07-MD-Dqj" id="U4w-OV-zUt"/>
                         <outlet property="offsetSlider" destination="Uup-pm-HyV" id="Oze-4I-5aa"/>
                         <outlet property="rotationSlider" destination="myy-YB-szz" id="1gr-tT-grm"/>

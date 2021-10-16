@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var bellView: UIImageView!
-    @IBOutlet weak var bellsAssView: UIView!
+    @IBOutlet weak var bellBackgroundView: UIView!
     @IBOutlet weak var durationSlider: UISlider!
     @IBOutlet weak var angleSlider: UISlider!
     @IBOutlet weak var offsetSlider: UISlider!
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     private var rotation: CGFloat = 1 {
         didSet {
-            bellsAssView.transform = CGAffineTransform(rotationAngle: rotation)
+            bellBackgroundView.transform = CGAffineTransform(rotationAngle: rotation)
             shakeWith(duration: duration, angle: angle, yOffset: yOffset)
         }
     }
