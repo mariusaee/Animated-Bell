@@ -17,16 +17,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var rotationSlider: UISlider!
     
     
-    var duration: Double = 1 {
+    private var duration: Double = 1 {
         didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
     }
-    var angle: CGFloat = .pi/8 {
+    private var angle: CGFloat = .pi/8 {
         didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
     }
-    var yOffset: CGFloat = 0.5 {
+    private var yOffset: CGFloat = 0.5 {
         didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
     }
-    var rotation: CGFloat = 1 {
+    private var rotation: CGFloat = 1 {
         didSet {
             bellsAssView.transform = CGAffineTransform(rotationAngle: rotation)
             shakeWith(duration: duration, angle: angle, yOffset: yOffset)
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 
 // MARK: - Setup
 extension ViewController {
-    func setup() {
+    private func setup() {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_: )))
         bellView.addGestureRecognizer(singleTap)
         bellView.isUserInteractionEnabled = true
@@ -65,7 +65,7 @@ extension ViewController {
 
 // MARK: - Animation
 extension ViewController {
-    @objc func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
+    @objc private func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
         shakeWith(duration: duration, angle: angle, yOffset: yOffset)
     }
     
