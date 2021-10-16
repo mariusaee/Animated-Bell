@@ -10,9 +10,12 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var bellView: UIImageView!
+    @IBOutlet weak var bellsAssView: UIView!
     @IBOutlet weak var durationSlider: UISlider!
     @IBOutlet weak var angleSlider: UISlider!
     @IBOutlet weak var offsetSlider: UISlider!
+    @IBOutlet weak var rotationSlider: UISlider!
+    
     
     var duration: Double = 1 {
         didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
@@ -20,22 +23,19 @@ class ViewController: UIViewController {
     var angle: CGFloat = .pi/8 {
         didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
     }
-    var yOffset: CGFloat = 1 {
+    var yOffset: CGFloat = 0.5 {
         didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
     }
     var rotation: CGFloat = 1 {
-        didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
+        didSet {
+            bellsAssView.transform = CGAffineTransform(rotationAngle: rotation)
+            shakeWith(duration: duration, angle: angle, yOffset: yOffset)
+        }
     }
-    
-//    let degrees: CGFloat = 20.0 //the value in degrees
-//    let radians: CGFloat = degrees * (.pi / 180)
-//    imageView.transform = CGAffineTransform(rotationAngle: radians)
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        bellView.transform = CGAffineTransform(rotationAngle: 10)
     }
     
     @IBAction func durationSliderChanged(_ sender: UISlider) {
@@ -47,6 +47,10 @@ class ViewController: UIViewController {
     @IBAction func offsetSliderChanged(_ sender: UISlider) {
         yOffset = CGFloat(sender.value)
     }
+    @IBAction func rotationSliderChanged(_ sender: UISlider) {
+        rotation = CGFloat(sender.value)
+    }
+    
 }
 
 // MARK: - Setup
