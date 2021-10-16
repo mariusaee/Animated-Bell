@@ -54,18 +54,14 @@ extension ViewController {
         
         bellView.setAnchorPoint(CGPoint(x: 0.5, y: yOffset))
         
-        print("anchorPoint: \(bellView.layer.anchorPoint)")
-        
         UIView.animateKeyframes(
             withDuration: duration,
             delay: 0,
             options: [],
             animations:{
                 UIView.addKeyframe(withRelativeStartTime: 0.0,
-                                   relativeDuration: frameDuration)
-                {
+                                   relativeDuration: frameDuration) {
                     self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
-                    
                 }
                 
                 UIView.addKeyframe(withRelativeStartTime: frameDuration,
