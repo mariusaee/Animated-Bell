@@ -16,15 +16,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var offsetSlider: UISlider!
     @IBOutlet weak var rotationSlider: UISlider!
     
-    private var duration: Double = 1 {
-        didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
+    private var duration = 1.0 {
+        didSet {
+            shakeWith(duration: duration, angle: angle, yOffset: yOffset)
+        }
     }
-    private var angle: CGFloat = .pi/8 {
-        didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
+    
+    private var angle: CGFloat = .pi / 8 {
+        didSet {
+            shakeWith(duration: duration, angle: angle, yOffset: yOffset)
+        }
     }
+    
     private var yOffset: CGFloat = 0.5 {
-        didSet { shakeWith(duration: duration, angle: angle, yOffset: yOffset) }
+        didSet {
+            shakeWith(duration: duration, angle: angle, yOffset: yOffset)
+        }
     }
+    
     private var rotation: CGFloat = 1 {
         didSet {
             bellBackgroundView.transform = CGAffineTransform(rotationAngle: rotation)
@@ -38,14 +47,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func durationSliderChanged(_ sender: UISlider) {
-        duration = Double(sender.value)*2
+        duration = Double(sender.value) * 2
     }
+    
     @IBAction func angleSliderChanged(_ sender: UISlider) {
-        angle = CGFloat(sender.value) * .pi/2
+        angle = CGFloat(sender.value) * .pi / 2
     }
+    
     @IBAction func offsetSliderChanged(_ sender: UISlider) {
         yOffset = CGFloat(sender.value)
     }
+    
     @IBAction func rotationSliderChanged(_ sender: UISlider) {
         rotation = CGFloat(sender.value)
     }
@@ -54,7 +66,7 @@ class ViewController: UIViewController {
 // MARK: - Setup
 extension ViewController {
     private func setup() {
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_: )))
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         bellView.addGestureRecognizer(singleTap)
         bellView.isUserInteractionEnabled = true
     }
@@ -67,48 +79,36 @@ extension ViewController {
     }
     
     private func shakeWith(duration: Double, angle: CGFloat, yOffset: CGFloat) {
-        
-        let numberOfFrames: Double = 6
-        let frameDuration = Double(1/numberOfFrames)
+        let numberOfFrames = 6.0
+        let frameDuration = Double(1 / numberOfFrames)
         
         bellView.setAnchorPoint(CGPoint(x: 0.5, y: yOffset))
         
-        UIView.animateKeyframes(
-            withDuration: duration,
-            delay: 0,
-            options: [],
-            animations:{
-                UIView.addKeyframe(withRelativeStartTime: 0.0,
-                                   relativeDuration: frameDuration) {
-                    self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
-                }
-                
-                UIView.addKeyframe(withRelativeStartTime: frameDuration,
-                                   relativeDuration: frameDuration) {
-                    self.bellView.transform = CGAffineTransform(rotationAngle: +angle)
-                }
-                
-                UIView.addKeyframe(withRelativeStartTime: frameDuration*2,
-                                   relativeDuration: frameDuration) {
-                    self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
-                }
-                
-                UIView.addKeyframe(withRelativeStartTime: frameDuration*3,
-                                   relativeDuration: frameDuration) {
-                    self.bellView.transform = CGAffineTransform(rotationAngle: +angle)
-                }
-                
-                UIView.addKeyframe(withRelativeStartTime: frameDuration*4,
-                                   relativeDuration: frameDuration) {
-                    self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
-                }
-                
-                UIView.addKeyframe(withRelativeStartTime: frameDuration*5,
-                                   relativeDuration: frameDuration) {
-                    self.bellView.transform = CGAffineTransform.identity
-                }
+        UIView.animateKeyframes(withDuration: duration, delay: 0, options: []) {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
             }
-        )
+            
+            UIView.addKeyframe(withRelativeStartTime: frameDuration, relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: +angle)
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: frameDuration * 2, relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: frameDuration * 3, relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: +angle)
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: frameDuration * 4, relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: frameDuration * 5, relativeDuration: frameDuration) {
+                self.bellView.transform = CGAffineTransform.identity
+            }
+        }
     }
 }
 
