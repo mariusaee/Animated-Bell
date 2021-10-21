@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animated_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-XV-TOZ">
-                                <rect key="frame" x="85" y="36" width="150" height="496"/>
+                                <rect key="frame" x="132" y="200" width="150" height="496"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqn-KD-4sg" userLabel="Bell Background View">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -101,12 +101,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="angleSlider" destination="mz6-kL-ZzN" id="Cow-r6-nOf"/>
                         <outlet property="bellBackgroundView" destination="mqn-KD-4sg" id="63B-lS-86w"/>
                         <outlet property="bellView" destination="DQI-e0-SL5" id="Q1I-qo-COT"/>
-                        <outlet property="durationSlider" destination="y07-MD-Dqj" id="U4w-OV-zUt"/>
-                        <outlet property="offsetSlider" destination="Uup-pm-HyV" id="Oze-4I-5aa"/>
-                        <outlet property="rotationSlider" destination="myy-YB-szz" id="1gr-tT-grm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

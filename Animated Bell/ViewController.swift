@@ -11,10 +11,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var bellView: UIImageView!
     @IBOutlet weak var bellBackgroundView: UIView!
-    @IBOutlet weak var durationSlider: UISlider!
-    @IBOutlet weak var angleSlider: UISlider!
-    @IBOutlet weak var offsetSlider: UISlider!
-    @IBOutlet weak var rotationSlider: UISlider!
     
     private var duration = 1.0 {
         didSet {
