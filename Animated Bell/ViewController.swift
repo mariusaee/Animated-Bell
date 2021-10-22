@@ -82,7 +82,7 @@ extension ViewController {
         
         print("Duration: \(duration), Angle: \(angle), Offset: \(yOffset), Rotation: \(rotation)")
         
-        UIView.animateKeyframes(withDuration: duration, delay: 0, options: []) {
+        UIView.animateKeyframes(withDuration: duration, delay: 0) {
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: frameDuration) {
                 self.bellView.transform = CGAffineTransform(rotationAngle: -angle)
             }
