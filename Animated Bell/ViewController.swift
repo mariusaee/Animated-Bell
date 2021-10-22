@@ -80,7 +80,7 @@ extension ViewController {
         
         bellView.setAnchorPoint(CGPoint(x: 0.5, y: yOffset))
         
-        print("Duration: \(duration), Angle: \(angle), Offset: \(yOffset), Rotation: \(rotation)")
+        //print("Duration: \(duration), Angle: \(angle), Offset: \(yOffset), Rotation: \(rotation)")
         
         UIView.animateKeyframes(withDuration: duration, delay: 0) {
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: frameDuration) {
